@@ -85,7 +85,7 @@ const Hero = () => {
 
             <motion.h1
               variants={itemVariants}
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme === "light" ? "text-neutral-darkest" : "dark:text-white"} tracking-tight`}  
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme === "light" ? "text-neutral-darkest" : "text-white"} tracking-tight`}  
             >
               Transform Your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -96,7 +96,7 @@ const Hero = () => {
 
             <motion.p
               variants={itemVariants}
-              className={`text-xl ${theme === "light" ? "text-neutral-dark" : "dark:text-neutral-light"} mb-8 leading-relaxed`}
+              className={`text-xl ${theme === "light" ? "text-neutral-dark" : "text-neutral-light"} mb-8 leading-relaxed`}
             >
               SoftSell helps businesses monetize their surplus software licenses
               with our secure marketplace platform. Sell your unused licenses
@@ -115,7 +115,7 @@ const Hero = () => {
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3 flex-shrink-0">
                     <FiCheckCircle className="text-primary" size={14} />
                   </div>
-                  <p className={`${theme === "light" ? "text-neutral-dark" : "dark:text-neutral-light"} font-medium`}>
+                  <p className={`${theme === "light" ? "text-neutral-dark" : "text-neutral-light"} font-medium`}>
                     {feature}
                   </p>
                 </motion.div>
