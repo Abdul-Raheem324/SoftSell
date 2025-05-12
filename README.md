@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-deployment-url-here.vercel.app)
+[View Live Demo](https://soft-sell-lovat.vercel.app/)
 
 ## 📝 Project Overview
 
@@ -63,30 +63,48 @@ This project was developed as part of the Credex Web Development Internship Assi
 
 ## 🚀 Deployment
 
-The project is deployed on [Vercel/Netlify/GitHub Pages]. The deployment process was straightforward:
+The project is deployed on Vercel. The deployment process was straightforward:
 
-1. Connected the GitHub repository to the deployment platform
+1. Connected the GitHub repository to the vercel platform
 2. Configured build settings (default Vite configuration)
-3. Added necessary environment variables (if any)
-4. Deployed the main branch
+3. Deployed the main branch
 
-## ⏱️ Time Spent
+## ⏱️ Time Spent Breakdown
 
-- **Design Planning**: 2 hours
-- **Core Development**: 
-  - Setup & Structure: 1 hour
-  - Header & Hero Section: 2 hours
-  - How It Works & Why Choose Us: 2 hours
-  - Testimonials & Contact Form: 2 hours
-- **Styling & Responsiveness**: 3 hours
-- **Bonus Features**:
-  - Light/Dark Mode: 1 hour
-  - Animations: 2 hours
-  - Chat Widget: 3 hours
-- **Testing & Bug Fixing**: 2 hours
-- **Deployment & Documentation**: 1 hour
+- **Design Planning**: *1.5 hours*  
+  Initial wireframes, layout ideas, and color/theme decisions.
 
-**Total Time**: Approximately 19 hours
+- **Core Development**:  
+  - **Project Setup & File Structure**: *0.5 hours*  
+    (Vite, React setup, folder organization)  
+  - **Header & Hero Section**: *1.5 hours*  
+    (Responsive nav, hero image/text, CTA buttons)  
+  - **How It Works & Why Choose Us Sections**: *1.5 hours*  
+    (Structured layout, icons, content blocks)  
+  - **Testimonials & Contact Form**: *1.5 hours*  
+    (Form functionality, validation, UI layout)
+
+- **Styling & Responsiveness**: *2.5 hours*  
+  (Built using Tailwind CSS with mobile-first design and utility classes)
+
+- **Bonus Features**:  
+  - **Light/Dark Mode Toggle**: *1 hour*  
+    (Theme logic, local storage persistence)  
+  - **Scroll Animations / Transitions**: *1.5 hours*  
+    (Animate on scroll, hover effects)  
+  - **Chat Widget Integration**: *1 hour*  
+    (Embedding, styling)
+
+- **Testing & Bug Fixing**: *1.5 hours*  
+  (Console cleanup, browser/device testing, final polish)
+
+- **Deployment & Documentation**: *0.5 hour*  
+  (Vercel setup, README)
+
+---
+
+### ✅ **Total Time Spent: ~14.5 hours**
+
 
 ## 🔮 Future Improvements
 
