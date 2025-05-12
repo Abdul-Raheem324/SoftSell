@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import { useTheme } from "../../context/ThemeContext";
 
 const Hero = () => {
+  const {theme} = useTheme();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,13 +55,13 @@ const Hero = () => {
     >
       <div className="absolute inset-0 overflow-hidden -z-10">
         <motion.div
-          className="absolute top-24 right-0 w-2/3 h-2/3 bg-gradient-to-b from-primary-light/20 to-transparent rounded-full blur-3xl"
+          className={`absolute top-24 right-0 w-2/3 h-2/3 ${theme === "light" ? "bg-gradient-to-b from-primary/20 to-transparent" : "bg-gradient-to-b from-primary-light/20 to-transparent"} rounded-full blur-3xl`}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.7, scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         />
         <motion.div
-          className="absolute -bottom-16 -left-16 w-2/3 h-2/3 bg-gradient-to-t from-secondary-light/20 to-transparent rounded-full blur-3xl"
+          className={`absolute -bottom-16 -left-16 w-2/3 h-2/3 ${theme === "light" ? "bg-gradient-to-t from-secondary/20 to-transparent" : "bg-gradient-to-t from-secondary-light/20 to-transparent"} rounded-full blur-3xl`}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.6, scale: 1 }}
           transition={{ duration: 2.5, delay: 0.5, ease: "easeOut" }}
@@ -76,14 +78,14 @@ const Hero = () => {
           >
             <motion.span
               variants={itemVariants}
-              className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary dark:text-primary-light text-sm font-medium mb-6"
+              className={`inline-block px-4 py-1.5 rounded-full ${theme === "light" ? "bg-primary/10 text-primary" : "bg-primary/10 text-primary-light"} text-sm font-medium mb-6`}
             >
               Software License Marketplace
             </motion.span>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight dark:text-white tracking-tight"
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight ${theme === "light" ? "text-neutral-darkest" : "dark:text-white"} tracking-tight`}  
             >
               Transform Your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -94,7 +96,7 @@ const Hero = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-xl text-neutral-dark dark:text-neutral-light mb-8 leading-relaxed"
+              className={`text-xl ${theme === "light" ? "text-neutral-dark" : "dark:text-neutral-light"} mb-8 leading-relaxed`}
             >
               SoftSell helps businesses monetize their surplus software licenses
               with our secure marketplace platform. Sell your unused licenses
@@ -113,7 +115,7 @@ const Hero = () => {
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3 flex-shrink-0">
                     <FiCheckCircle className="text-primary" size={14} />
                   </div>
-                  <p className="dark:text-neutral-light font-medium">
+                  <p className={`${theme === "light" ? "text-neutral-dark" : "dark:text-neutral-light"} font-medium`}>
                     {feature}
                   </p>
                 </motion.div>
@@ -155,10 +157,10 @@ const Hero = () => {
 
               <motion.a
                 href="#how-it-works"
-                className="btn btn-outline text-center dark:text-white dark:border-white flex items-center justify-center font-medium"
+                className={`btn btn-outline text-center ${theme === "light" ? "text-neutral-darkest border-neutral-darkest" : "dark:text-white dark:border-white"} flex items-center justify-center font-medium`}
                 whileHover={{
                   scale: 1.03,
-                  backgroundColor: "rgba(255,255,255,0.1)",
+                  backgroundColor: theme === "light" ? "rgba(0,0,0,0.05)" : "rgba(255,255,255,0.1)",
                 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -173,7 +175,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="relative bg-white dark:bg-neutral-dark rounded-2xl shadow-xl p-5 md:p-8 perspective-800">
+            <div className={`relative ${theme === "light" ? "bg-white" : "dark:bg-neutral-dark"} rounded-2xl shadow-xl p-5 md:p-8 perspective-800`}>
               <motion.div
                 className="bg-gradient-to-br from-primary/40 to-secondary/40 rounded-xl p-4 md:p-6"
                 initial={{ rotateY: -15, rotateX: 10 }}
@@ -185,17 +187,17 @@ const Hero = () => {
                   transition: { duration: 0.5 },
                 }}
               >
-                <div className="bg-white dark:bg-neutral-darkest rounded-lg p-4 shadow-inner">
+                <div className={`${theme === "light" ? "bg-white" : "dark:bg-neutral-darkest"} rounded-lg p-4 shadow-inner`}>
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-md flex items-center justify-center">
                         <span className="text-white font-bold text-xs">S</span>
                       </div>
-                      <h3 className="ml-2 font-medium dark:text-white">
+                      <h3 className={`ml-2 font-medium ${theme === "light" ? "text-neutral-darkest" : "dark:text-white"}`}>
                         SoftSell Portal
                       </h3>
                     </div>
-                    <div className="text-xs px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100 rounded-full font-medium flex items-center">
+                    <div className={`text-xs px-3 py-1 ${theme === "light" ? "bg-green-100 text-green-800" : "dark:bg-green-900 dark:text-green-100"} rounded-full font-medium flex items-center`}>
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
                       Connected
                     </div>
@@ -227,7 +229,7 @@ const Hero = () => {
                     ].map((license) => (
                       <motion.div
                         key={license.name}
-                        className="bg-neutral-light dark:bg-neutral-dark rounded-lg p-4 border border-transparent hover:border-primary/20 transition-colors"
+                        className={`${theme === "light" ? "bg-neutral-lightest" : "dark:bg-neutral-dark"} rounded-lg p-4 border border-transparent hover:border-primary/20 transition-colors`}
                         variants={cardVariants}
                         custom={license.index}
                         initial="hidden"
@@ -239,14 +241,14 @@ const Hero = () => {
                         }}
                       >
                         <div className="flex justify-between mb-1">
-                          <p className="text-sm font-semibold dark:text-white">
+                          <p className={`text-sm font-semibold ${theme === "light" ? "text-neutral-darkest" : "dark:text-white"}`}>
                             {license.name}
                           </p>
                           <p className="text-sm font-bold text-green-600">
                             {license.price}
                           </p>
                         </div>
-                        <div className="flex justify-between text-xs text-neutral-dark dark:text-neutral-light">
+                        <div className={`flex justify-between text-xs ${theme === "light" ? "text-neutral-dark" : "dark:text-neutral-light"}`}>
                           <p>{license.type}</p>
                           <p>Expires: {license.expires}</p>
                         </div>
@@ -265,7 +267,7 @@ const Hero = () => {
                       transition: { duration: 0.2 },
                     }}
                   >
-                    <p className="text-sm text-primary dark:text-primary-light font-semibold">
+                    <p className={`text-sm ${theme === "light" ? "text-primary" : "dark:text-primary-light"} font-semibold`}>
                       Total Value: $1,164.24
                     </p>
                   </motion.div>
@@ -273,7 +275,7 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -top-6 -right-6 bg-white dark:bg-neutral-dark shadow-lg rounded-full p-3 z-20"
+                className={`absolute -top-6 -right-6 ${theme === "light" ? "bg-white" : "dark:bg-neutral-dark"} shadow-lg rounded-full p-3 z-20`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.9, duration: 0.5 }}
@@ -283,13 +285,13 @@ const Hero = () => {
                   transition: { duration: 0.3, type: "spring" },
                 }}
               >
-                <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 dark:bg-green-800 dark:text-green-100 flex items-center justify-center font-bold">
+                <div className={`w-10 h-10 rounded-full ${theme === "light" ? "bg-green-100 text-green-600" : "dark:bg-green-800 dark:text-green-100"} flex items-center justify-center font-bold`}>
                   $$$
                 </div>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 bg-white dark:bg-neutral-dark shadow-lg rounded-full p-2 z-20"
+                className={`absolute -bottom-4 -left-4 ${theme === "light" ? "bg-white" : "dark:bg-neutral-dark"} shadow-lg rounded-full p-2 z-20`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2, duration: 0.5 }}
@@ -299,7 +301,7 @@ const Hero = () => {
                   transition: { duration: 0.3, type: "spring" },
                 }}
               >
-                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-800 dark:text-blue-100 flex items-center justify-center text-xs font-bold">
+                <div className={`w-8 h-8 rounded-full ${theme === "light" ? "bg-blue-100 text-blue-600" : "dark:bg-blue-800 dark:text-blue-100"} flex items-center justify-center text-xs font-bold`}>
                   +45%
                 </div>
               </motion.div>

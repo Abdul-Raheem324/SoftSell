@@ -134,14 +134,18 @@ const HowItWorks = () => {
         >
           <motion.span
             variants={titleVariants}
-            className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary dark:text-primary-light text-sm font-medium mb-4"
+            className={`inline-block px-4 py-1.5 rounded-full bg-primary/10 ${
+              theme === "light" ? "text-primary" : "dark:text-primary-light"
+            } text-sm font-medium mb-4`}
           >
             Simple Three-Step Process
           </motion.span>
 
           <motion.h2
             variants={titleVariants}
-            className="text-3xl md:text-4xl font-bold mb-6 tracking-tight"
+            className={`text-3xl md:text-4xl font-bold mb-6 tracking-tight ${
+              theme === "light" ? "text-neutral-darkest" : "text-white"
+            }`}
           >
             How{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -213,7 +217,7 @@ const HowItWorks = () => {
 
                     <div
                       className={`absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-10 ${
-                        theme === "light" ? "bg-white" : "bg-neutral-darkest"
+                        theme === "light" ? "bg-white" : "bg-neutral-dark"
                       } rounded-full flex items-center justify-center shadow-md border-2 ${
                         theme === "light"
                           ? "border-white"
@@ -254,7 +258,11 @@ const HowItWorks = () => {
                           key={tagIndex}
                           custom={tagIndex}
                           variants={tagVariants}
-                          className="text-xs bg-primary/10 text-primary dark:bg-primary/20 px-3 py-1.5 rounded-full flex items-center font-medium"
+                          className={`text-xs ${
+                            theme === "light" 
+                              ? "bg-primary/10 text-primary" 
+                              : "dark:bg-primary/20 text-primary dark:text-primary-light"
+                          } px-3 py-1.5 rounded-full flex items-center font-medium`}
                         >
                           <FiCheckCircle className="mr-1.5" /> {tag}
                         </motion.span>
@@ -279,7 +287,9 @@ const HowItWorks = () => {
                       }
                       transition={{ delay: 0.8 + index * 0.3 }}
                     >
-                      <FiArrowRight className="text-primary text-2xl transform rotate-90" />
+                      <FiArrowRight className={`${
+                        theme === "light" ? "text-primary" : "text-primary"
+                      } text-2xl transform rotate-90`} />
                     </motion.div>
                   </div>
                 )}

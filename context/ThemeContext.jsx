@@ -27,5 +27,4 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// Export hook for easy access
 export const useTheme = () => useContext(ThemeContext);
